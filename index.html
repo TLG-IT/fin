@@ -3,59 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TLG Global Treasury Department</title>
+<title>TLG Global Finance & Treasury Department</title>
 
 <style>
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: #000;
+html, body{
+    margin:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#111;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-iframe {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    border: none;
+#top{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:36px;
+    background:#0077cc;
+    color:#fff;
+    display:flex;
+    justify-content:center;   /* Center horizontally */
+    align-items:center;       /* Center vertically */
+    font-size:16px;
+    font-weight:bold;
+    z-index:1000;
+    text-align:center;
+}
+
+iframe{
+    position:absolute;
+    top:36px;
+    left:0;
+    width:100%;
+    height:calc(100% - 36px);
+    border:none;
 }
 </style>
 </head>
+
 <body>
 
+<div id="top">
+    Finance & Treasury Department
+</div>
+
 <iframe
-    id="site"
-    src="https://tlg.global"
+    src="https://analytics.zoho.com/ZDBSlideshow.cc?SLIDEID=2298565000025746073&SLIDEKEY=d3a2e6590c076bfd81309e69b2b66464faf25b2f90bd6ec5f59ea90ddadb459e&INTERVAL=25&AUTOPLAY=true&INCLUDETITLE=true&INCLUDEDESC=true&SOCIALWIDGETS=false"
     allowfullscreen>
 </iframe>
 
 <script>
-// Attempt fullscreen
-async function goFullscreen() {
-    try {
-        if (!document.fullscreenElement) {
-            await document.documentElement.requestFullscreen();
-        }
-    } catch(e) {}
-}
-
-window.onload = goFullscreen;
-
-// Enter fullscreen on first click (required by many browsers)
-document.addEventListener("click", goFullscreen, { once: true });
-
-// Hide mouse cursor
-let timer;
-document.onmousemove = function () {
-    document.body.style.cursor = "default";
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-        document.body.style.cursor = "none";
-    }, 2000);
-};
+// Automatically enter fullscreen after the first user interaction
+document.addEventListener("click", () => {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    }
+}, { once: true });
 </script>
 
 </body>
